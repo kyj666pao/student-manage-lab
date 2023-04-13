@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Students/index</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Scholarship</th>
+        </tr>
+        <% students.forEach(student => { %>
+            <tr>
+                <td><a href="/students/<%= student._id %>"><%= student.id %></a></td>
+                <td><%= student.name %></td>
+                <td><%= student.age %></td>
+                <td><%= student.scholarship %></td>
+            </tr>
+        <%}) %>
+    </table>
+    <a href="/students/new">Add Student</a>
+</body>
+</html>

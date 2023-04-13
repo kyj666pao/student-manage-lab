@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= student.name %>'s page</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>Student Id</td>
+        <td><%= student.id %></td>
+      </tr>
+      <tr>
+        <td>Fullname</td>
+        <td><%= student.name %></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><%= student.age %></td>
+      </tr>
+      <tr>
+        <td>Scholarship</td>
+        <td><%= student.scholarship %></td>
+      </tr>
+    </table>
+    <a href="/students/edit/<%= student._id %>">Edit the information</a>
+    <br />
+    <form
+      action="/students/<%= student._id %>?_method=DELETE"
+      method="POST"
+      class="delete-form"
+    >
+      <button type="submit">Delete the student</button>
+    </form>
+    <a href="/students">Go back to students page</a>
+  </body>
+</html>
